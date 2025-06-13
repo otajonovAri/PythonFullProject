@@ -1,25 +1,24 @@
-print( )
-print("1-misol")
+print()
+print("Example 1")
 
-for son in range(10, 101, 2):
-    print(son, end=", ")
+for num in range(10, 101, 2):
+    print(num, end=", ")
 
-print( )
-print("2-misol")
+print()
+print("Example 2")
 
-son = 0  
-while son <= 0:
-    son = int(input("Iltimos, musbat son kiriting: "))
-    if son <= 0:
-        print("Xato! Musbat son kiriting.")
+number = 0
+while number <= 0:
+    number = int(input("Please enter a positive number: "))
+    if number <= 0:
+        print("Error! Enter a positive number.")
 
-print(f"Musbat son kiritildi: {son}")
+print(f"A positive number was entered: {number}")
 
-
-print( )
-print("3-misol")
+print()
+print("Example 3")
 
 for i in range(1, 6):  
     for j in range(1, 6):
         print(i * j, end=" ")  
-    print()  
+    print()

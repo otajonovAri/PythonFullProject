@@ -1,55 +1,58 @@
-print( )
-print("1-misol")
-class Talaba:
-    def __init__(self, ism, yosh, fakultet):
-        self.ism = ism
-        self.yosh = yosh
-        self.fakultet = fakultet
-    def talaba_malumotlari(self):
-        print(f"Ismi: {self.ism}, Yoshi: {self.yosh}, Fakulteti: {self.fakultet}")
-talaba1 = Talaba("Ali", 20, "Dasturlash")
-talaba1.talaba_malumotlari()
+print()
+print("Example 1")
+
+class Student:
+    def __init__(self, name, age, faculty):
+        self.name = name
+        self.age = age
+        self.faculty = faculty
+
+    def display_info(self):
+        print(f"Name: {self.name}, Age: {self.age}, Faculty: {self.faculty}")
+
+student1 = Student("Ali", 20, "Programming")
+student1.display_info()
 
 
 
+print()
+print("Example 2")
 
-print( )
-print("2-misol")
-class Tortburchak:
-    def __init__(self, uzunlik, en):
-        self.uzunlik = uzunlik
-        self.en = en
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
 
-    def yuza(self):
-        return self.uzunlik * self.en
+    def area(self):
+        return self.length * self.width
 
-    def perimetr(self):
-        return 2 * (self.uzunlik + self.en)
+    def perimeter(self):
+        return 2 * (self.length + self.width)
 
-t1 = Tortburchak(4, 5)
-print("Yuza:", t1.yuza())
-print("Perimetr:", t1.perimetr())
-
-
+r1 = Rectangle(4, 5)
+print("Area:", r1.area())
+print("Perimeter:", r1.perimeter())
 
 
-print( )
-print("3-misol")
-class Hisoblagich:
+
+print()
+print("Example 3")
+
+class Counter:
     def __init__(self):
-        self.qiymat = 0  
+        self.value = 0
 
-    def oshirish(self):
-        self.qiymat += 1  
+    def increment(self):
+        self.value += 1
 
-    def kamaytirish(self):
-        self.qiymat -= 1  
+    def decrement(self):
+        self.value -= 1
 
-    def qaytar(self):
-        return self.qiymat  
+    def get_value(self):
+        return self.value
 
-h = Hisoblagich()
-h.oshirish()
-h.oshirish()
-h.kamaytirish()
-print("Hozirgi qiymat:", h.qaytar())
+c = Counter()
+c.increment()
+c.increment()
+c.decrement()
+print("Current value:", c.get_value())

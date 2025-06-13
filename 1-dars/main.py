@@ -1,25 +1,23 @@
-print( )
-print("1-misol")
-ism = input("Iltimos, ismingizni kiriting: ")
-print(f"Salom, {ism}! Xush kelibsiz!")
+print()
+print("Example 1")
+name = input("Please enter your name: ")
+print(f"Hello, {name}! Welcome!")
 
-
-print( )
-print("2-misol")
+print()
+print("Example 2")
 from datetime import datetime
-hozirgi_yil = datetime.now().year
-tugilgan_yil = int(input("Tug‘ilgan yilingizni kiriting: "))
-yosh = hozirgi_yil - tugilgan_yil
-print(f"Siz {yosh} yoshdasiz (hozirgi yil {hozirgi_yil})")
+current_year = datetime.now().year
+birth_year = int(input("Enter your birth year: "))
+age = current_year - birth_year
+print(f"You are {age} years old (Current year is {current_year})")
 
-
-print( )
-print("3-misol")
-taom = input("Iltimos, taom tanlang: ")
-ichimlik = input("Iltimos, ichimlik tanlang: ")
-desert = input("Iltimos, desert tanlang: ")
-print("\nSiz quyidagi buyurtmani berdingiz:")
-print(f"Taom: {taom}")
-print(f"Ichimlik: {ichimlik}")
-print(f"Desert: {desert}")
-print("Yoqimli ishtaha!")
+print()
+print("Example 3")
+food = input("Please choose a dish: ")
+drink = input("Please choose a drink: ")
+dessert = input("Please choose a dessert: ")
+print("\nYou have ordered the following:")
+print(f"Dish: {food}")
+print(f"Drink: {drink}")
+print(f"Dessert: {dessert}")
+print("Enjoy your meal!")

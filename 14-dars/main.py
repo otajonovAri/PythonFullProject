@@ -1,60 +1,50 @@
 try:
-    a = float(input("Birinchi sonni kiriting: "))
-    b = float(input("Ikkinchi sonni kiriting: "))
+    a = float(input("Enter the first number: "))
+    b = float(input("Enter the second number: "))
     
-    natija = a / b
-    print("Natija:", natija)
+    result = a / b
+    print("Result:", result)
 
 except ZeroDivisionError:
-    print("Xatolik: Nolga bo‘lish mumkin emas!")
+    print("Error: Cannot divide by zero!")
 except ValueError:
-    print("Xatolik: Iltimos, faqat son kiriting!")
-
-
-
-
-
+    print("Error: Please enter valid numbers!")
 
 
 import math
 
 try:
-    son = float(input("Son kiriting: "))
+    number = float(input("Enter a number: "))
     
-    if son < 0:
-        raise ValueError("Manfiy sonlar qabul qilinmaydi!")
+    if number < 0:
+        raise ValueError("Negative numbers are not allowed!")
     
-    ildiz = math.sqrt(son)
-    print("Ildiz:", ildiz)
+    root = math.sqrt(number)
+    print("Square Root:", root)
 
 except ValueError as e:
-    print("Xatolik:", e)
+    print("Error:", e)
 
 
 
-
-
-
-
-def bolish_100ga(royxat):
+def divide_100_by_list(numbers):
     try:
-        if not royxat:
-            raise ValueError("Bo‘sh ro‘yxat!")
+        if not numbers:
+            raise ValueError("The list is empty!")
 
-        for son in royxat:
-            if son == 0:
-                raise ZeroDivisionError("Nolga bo‘lish mumkin emas!")
+        for num in numbers:
+            if num == 0:
+                raise ZeroDivisionError("Cannot divide by zero in the list!")
 
-        natijalar = [100 / son for son in royxat]
-        print("Natija:", natijalar)
+        results = [100 / num for num in numbers]
+        print("Results:", results)
 
     except ValueError as ve:
-        print("Xatolik:", ve)
+        print("Error:", ve)
     except ZeroDivisionError as zde:
-        print("Xatolik:", zde)
+        print("Error:", zde)
 
-
-# Test qilish:
-bolish_100ga([25, 0, 10])   # Xatolik: Nolga bo‘lish mumkin emas!
-# bolish_100ga([])         # Xatolik: Bo‘sh ro‘yxat!
-# bolish_100ga([10, 20])   # Natija: [10.0, 5.0]
+# Test cases
+divide_100_by_list([25, 0, 10])   # Error: Cannot divide by zero
+# divide_100_by_list([])         # Error: The list is empty
+# divide_100_by_list([10, 20])   # Results: [10.0, 5.0]

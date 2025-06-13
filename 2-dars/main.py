@@ -1,34 +1,30 @@
-print( )
-print("1-misol")
-matn = input("Matnni kiriting: ")
-uzunlik = len(matn)
-print(f"\nMatn uzunligi: {uzunlik} ta belgidan iborat")
-print("Katta harflar bilan:", matn.upper())
-print("Kichik harflar bilan:", matn.lower())
+print()
+print("Example 1")
+text = input("Enter a text: ")
+length = len(text)
+print(f"\nText length: {length} characters")
+print("In uppercase:", text.upper())
+print("In lowercase:", text.lower())
 
-
-
-print( )
-print("2-misol")
+print()
+print("Example 2")
 from datetime import datetime
-hozirgi_yil = datetime.now().year
-ism = input("Ismingizni kiriting: ")
-familiya = input("Familiyangizni kiriting: ")
-tugilgan_yil = int(input("Tug‘ilgan yilingizni kiriting: "))
-yosh = hozirgi_yil - tugilgan_yil
-print("\nSizning shaxsiy profilingiz:")
-print(f"Ism: {ism}")
-print(f"Familiya: {familiya}")
-print(f"Tug‘ilgan yil: {tugilgan_yil}")
-print(f"Yosh: {yosh} yosh")
+current_year = datetime.now().year
+first_name = input("Enter your first name: ")
+last_name = input("Enter your last name: ")
+birth_year = int(input("Enter your birth year: "))
+age = current_year - birth_year
+print("\nYour personal profile:")
+print(f"First name: {first_name}")
+print(f"Last name: {last_name}")
+print(f"Birth year: {birth_year}")
+print(f"Age: {age} years old")
 
-
-
-print( )
-print("3-misol")
-gap = input("Biror gap kiriting: ")
-sozlar = gap.split()
-soni = len(sozlar)
-eng_uzun_soz = max(sozlar, key=len)
-print(f"\nSo‘zlar soni: {soni} ta")
-print(f"Eng uzun so‘z: {eng_uzun_soz}")
+print()
+print("Example 3")
+sentence = input("Enter a sentence: ")
+words = sentence.split()
+word_count = len(words)
+longest_word = max(words, key=len)
+print(f"\nNumber of words: {word_count}")
+print(f"Longest word: {longest_word}")

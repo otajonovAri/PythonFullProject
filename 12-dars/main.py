@@ -1,99 +1,93 @@
-print( )
-print("1-misol")
-class Avtomobil:
-    def __init__(self, model, yil, tezlik):
+print()
+print("Example 1")
+
+class Car:
+    def __init__(self, model, year, speed):
         self.model = model
-        self.yil = yil
-        self.tezlik = tezlik
+        self.year = year
+        self.speed = speed
 
-    def harakatlan(self):
-        print(f"{self.model} avtomobili harakatlanmoqda!")
+    def move(self):
+        print(f"{self.model} car is moving!")
 
-class Elektromobil(Avtomobil):
-    def __init__(self, model, yil, tezlik, batareya_quvvati):
-        super().__init__(model, yil, tezlik)  
-        self.batareya_quvvati = batareya_quvvati
+class ElectricCar(Car):
+    def __init__(self, model, year, speed, battery_capacity):
+        super().__init__(model, year, speed)  # call parent class constructor
+        self.battery_capacity = battery_capacity
 
-    def harakatlan(self):
-        print(f"{self.model} elektromobili harakatlanmoqda! Batareya: {self.batareya_quvvati}")
+    def move(self):  # overriding parent method
+        print(f"{self.model} electric car is moving! Battery: {self.battery_capacity}")
 
-a1 = Elektromobil("Tesla", 2023, 150, "100 kWh")
-a1.harakatlan()
-
-
+car1 = ElectricCar("Tesla", 2023, 150, "100 kWh")
+car1.move()
 
 
 
-print( )
-print("2-misol")
-class Shakl:
-    def yuza(self):
-        pass  
+print()
+print("Example 2")
 
-class Doira(Shakl):
+class Shape:
+    def area(self):
+        pass  # abstract method
+
+class Circle(Shape):
     def __init__(self, radius):
         self.radius = radius
 
-    def yuza(self):
-        return 3.14 * self.radius ** 2  
+    def area(self):
+        return 3.14 * self.radius ** 2
 
-class Kvadrat(Shakl):
-    def __init__(self, tomon):
-        self.tomon = tomon
+class Square(Shape):
+    def __init__(self, side):
+        self.side = side
 
-    def yuza(self):
-        return self.tomon * self.tomon  
+    def area(self):
+        return self.side * self.side
 
-figuralar = [
-    Doira(5),
-    Kvadrat(5)
+shapes = [
+    Circle(5),
+    Square(5)
 ]
 
-for shakl in figuralar:
-    if isinstance(shakl, Doira):
-        print(f"Doira yuzi: {shakl.yuza()}")
-    elif isinstance(shakl, Kvadrat):
-        print(f"Kvadrat yuzi: {shakl.yuza()}")
+for shape in shapes:
+    if isinstance(shape, Circle):
+        print(f"Circle area: {shape.area()}")
+    elif isinstance(shape, Square):
+        print(f"Square area: {shape.area()}")
 
 
 
+print()
+print("Example 3")
 
-
-print( )
-print("3-misol")
-class BankHisobi:
+class BankAccount:
     def __init__(self):
-        self.__balans = 0  
+        self.__balance = 0  # private variable
 
-    def deposit(self, summa):
-        self.__balans += summa
-        print(f"Hisobga {summa} qo‘shildi.")
+    def deposit(self, amount):
+        self.__balance += amount
+        print(f"Deposited: {amount}")
 
-    def withdraw(self, summa):
-        if summa > self.__balans:
-            print("Balansda yetarli mablag‘ yo‘q.")
+    def withdraw(self, amount):
+        if amount > self.__balance:
+            print("Insufficient balance.")
         else:
-            self.__balans -= summa
-            print(f"{summa} so‘m yechildi. Yangi balans: {self.__balans}")
+            self.__balance -= amount
+            print(f"Withdrawn: {amount}, New balance: {self.__balance}")
 
-    def balansni_ol(self):
-        return self.__balans
+    def get_balance(self):
+        return self.__balance
 
-
-class BiznesHisob(BankHisobi):
-    def withdraw(self, summa):
-        komissiya = summa * 0.05
-        jami = summa + komissiya
-        if jami > self.balansni_ol():
-            print("Balansda yetarli mablag‘ yo‘q.")
+class BusinessAccount(BankAccount):
+    def withdraw(self, amount):
+        fee = amount * 0.05
+        total = amount + fee
+        if total > self.get_balance():
+            print("Insufficient balance.")
         else:
-           
+            self._BankAccount__balance -= total  # access to private variable with name mangling
+            print(f"Withdrawn: {amount} (with fee {int(total)}), New balance: {int(self._BankAccount__balance)}")
 
-            self._BankHisobi__balans -= jami  
-
-            print(f"{summa} so‘m yechildi (komissiya bilan {int(jami)}). Yangi balans: {int(self._BankHisobi__balans)}")
-
-
-hisob = BiznesHisob()
-hisob.deposit(1000)
-hisob.withdraw(100)
+account = BusinessAccount()
+account.deposit(1000)
+account.withdraw(100)

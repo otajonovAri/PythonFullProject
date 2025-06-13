@@ -1,31 +1,31 @@
-print( )
-print("1-misol")
+print()
+print("Example 1")
 
-def full_name(ism, familiya="Familiyasi yo‘q"):
-    return f"{ism} {familiya}"
-print(full_name("Ali"))              
-print(full_name("Ali", "Valiyev"))   
+def full_name(first_name, last_name="No last name"):
+    return f"{first_name} {last_name}"
 
-print( )
-print("2-misol")
+print(full_name("Ali"))
+print(full_name("Ali", "Valiyev"))
+
+print()
+print("Example 2")
 
 def shape_area(shape, **kwargs):
-    if shape == "kvadrat":
-        a = kwargs.get("a")  
+    if shape == "square":
+        a = kwargs.get("a")
         return a ** 2
-    elif shape == "to'g'ri to'rtburchak":
-        a = kwargs.get("a")  
-        b = kwargs.get("b") 
+    elif shape == "rectangle":
+        a = kwargs.get("a")
+        b = kwargs.get("b")
         return a * b
     else:
-        return "Shakl tanlanmadi"
+        return "Shape not recognized"
 
-print(shape_area("kvadrat", a=4))  
-print(shape_area("to'g'ri to'rtburchak", a=4, b=5))  
+print(shape_area("square", a=4))
+print(shape_area("rectangle", a=4, b=5))
 
-
-print( )
-print("3-misol")
+print()
+print("Example 3")
 
 def sum_to_n(n):
     if n == 1:
@@ -33,4 +33,4 @@ def sum_to_n(n):
     else:
         return n + sum_to_n(n - 1)
 
-print(sum_to_n(10)) 
+print(sum_to_n(10))

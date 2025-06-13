@@ -1,94 +1,91 @@
-print( )
-print("1-misol")
-def talaba_baholarini_yozish():
-    n = int(input("Nechta talaba ma'lumotlarini kiritasiz? ")) 
-    with open("imtihon.txt", "w") as fayl:
+print()
+print("Example 1")
+
+def write_student_grades():
+    n = int(input("How many student records will you enter? "))
+    with open("grades.txt", "w") as file:
         for _ in range(n):
-            ism, baho = input("Talabaning ismini va bahosini kiriting (masalan, Ali 85): ").split()
-            fayl.write(f"{ism} {baho}\n")  
+            name, grade = input("Enter student name and grade (e.g., Ali 85): ").split()
+            file.write(f"{name} {grade}\n")
 
-def alochilarni_ajratish():
-    with open("imtihon.txt", "r") as fayl:
-        alochilar = []  
-        for satr in fayl:
-            ism, baho = satr.split()
-            baho = int(baho)  
-            if baho >= 90:
-                alochilar.append(f"{ism} - {baho}\n")  
-    with open("alochilar.txt", "w") as fayl:
-        fayl.writelines(alochilar)  
+def extract_top_students():
+    with open("grades.txt", "r") as file:
+        top_students = []
+        for line in file:
+            name, grade = line.split()
+            grade = int(grade)
+            if grade >= 90:
+                top_students.append(f"{name} - {grade}\n")
+    
+    with open("top_students.txt", "w") as file:
+        file.writelines(top_students)
 
-talaba_baholarini_yozish() 
-alochilarni_ajratish()  
-print("A'lochilar alohida faylga yozildi!")
+write_student_grades()
+extract_top_students()
+print("Top students have been written to a separate file!")
 
 
 
+print()
+print("Example 2")
 
-print( )
-print("2-misol")
 from collections import Counter
-def matn_statistikasi():
+
+def text_statistics():
     try:
-        # Faylni o‘qish
-        with open("C:/Users/user/Desktop/python vazifalar/10-dars/matn.txt", "r") as fayl:
-            matn = fayl.read().lower()  # Matnni kichik harflar bilan o‘qish
+        with open("C:/Users/user/Desktop/python vazifalar/10-dars/matn.txt", "r") as file:
+            text = file.read().lower()
     except FileNotFoundError:
-        print("Fayl topilmadi!")
+        print("File not found!")
         return
-    
-    if not matn.strip():
-        print("Matn bo‘sh!")
+
+    if not text.strip():
+        print("Text is empty!")
         return
-    sozlar = matn.split()
-    
-    jami_sozlar = len(sozlar)
-    
-    takrorlanmas_sozlar = len(set(sozlar))
-    sozlar_count = Counter(sozlar)
-    if sozlar_count:
-        eng_kop_uchradi = sozlar_count.most_common(1)[0]  # eng ko‘p uchragan so‘z va uning soni
-        print(f"Eng ko‘p uchragan so‘z: '{eng_kop_uchradi[0]}' ({eng_kop_uchradi[1]} marta)")
+
+    words = text.split()
+    total_words = len(words)
+    unique_words = len(set(words))
+    word_counts = Counter(words)
+
+    if word_counts:
+        most_common = word_counts.most_common(1)[0]
+        print(f"Most frequent word: '{most_common[0]}' ({most_common[1]} times)")
     else:
-        print("So‘zlar mavjud emas.")
-    
-    print(f"Jami sozlar soni: {jami_sozlar}")
-    print(f"Takrorlanmas so‘zlar soni: {takrorlanmas_sozlar}")
+        print("No words found.")
 
-matn_statistikasi()
+    print(f"Total number of words: {total_words}")
+    print(f"Number of unique words: {unique_words}")
 
-
+text_statistics()
 
 
+print()
+print("Example 3")
 
-print( )
-print("3-misol")
-def sonlar_statistikasi():
+def number_statistics():
     try:
-        with open("C:/Users/user/Desktop/python vazifalar/10-dars/raqamlar.txt", "r") as fayl:
-            sonlar = [int(son) for line in fayl.readlines() for son in line.split()]
+        with open("C:/Users/user/Desktop/python vazifalar/10-dars/raqamlar.txt", "r") as file:
+            numbers = [int(num) for line in file.readlines() for num in line.split()]
     except FileNotFoundError:
-        print("Fayl topilmadi!")
+        print("File not found!")
         return
     except ValueError:
-        print("Faylda noto‘g‘ri formatdagi ma'lumot bor!")
+        print("Invalid data format in file!")
         return
-    
-    if not sonlar:
-        print("Faylda hech qanday son yo‘q!")
-        return
-    
-    eng_katta = max(sonlar)
-    
-    eng_kichik = min(sonlar)
-    
-    ortacha = sum(sonlar) / len(sonlar)
-    
-    juft_yigindi = sum(son for son in sonlar if son % 2 == 0)
-    
-    print(f"Eng katta son: {eng_katta}")
-    print(f"Eng kichik son: {eng_kichik}")
-    print(f"O‘rtacha: {ortacha:.2f}")
-    print(f"Juft sonlar yig'indisi: {juft_yigindi}")
 
-sonlar_statistikasi()
+    if not numbers:
+        print("No numbers found in the file!")
+        return
+
+    max_num = max(numbers)
+    min_num = min(numbers)
+    average = sum(numbers) / len(numbers)
+    even_sum = sum(num for num in numbers if num % 2 == 0)
+
+    print(f"Largest number: {max_num}")
+    print(f"Smallest number: {min_num}")
+    print(f"Average: {average:.2f}")
+    print(f"Sum of even numbers: {even_sum}")
+
+number_statistics()

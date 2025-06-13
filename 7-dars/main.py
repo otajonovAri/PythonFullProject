@@ -1,29 +1,31 @@
-print( )
-print("1-misol")
+print()
+print("Example 1")
 
-matn = "dasturlash juda yaxshi dasturlash"
-sozlar = matn.split()
-takrorlash = {}
-for soz in sozlar:
-    if soz in takrorlash:
-        takrorlash[soz] += 1
+text = "programming is very good programming"
+words = text.split()
+word_count = {}
+
+for word in words:
+    if word in word_count:
+        word_count[word] += 1
     else:
-        takrorlash[soz] = 1
-print(takrorlash)
+        word_count[word] = 1
 
+print(word_count)
 
-print( )
-print("2-misol")
+print()
+print("Example 2")
 
-foydalanuvchi = {"ism": "Ali", "yosh": 20, "shahar": "Andijon"}
-foydalanuvchi["yosh"] = 21
-del foydalanuvchi["shahar"]
-print(foydalanuvchi)
+user = {"name": "Ali", "age": 20, "city": "Andijon"}
+user["age"] = 21
+del user["city"]
+print(user)
 
+print()
+print("Example 3")
 
-print( )
-print("3-misol")
-royxat = [1, 2, 2, 3, 4, 4, 5]
-noyob_qiymatlar = set(royxat)
-print(noyob_qiymatlar)
-print( )
+numbers = [1, 2, 2, 3, 4, 4, 5]
+unique_values = set(numbers)
+print(unique_values)
+
+print()

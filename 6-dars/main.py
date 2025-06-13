@@ -1,36 +1,33 @@
-print( )
-print("1-misol")
+print()
+print("Example 1")
 
-# sonlar = [4, 7, 10, 13, 16]
+# Even numbers from a list (commented example)
+# numbers = [4, 7, 10, 13, 16]
+# for number in numbers:
+#     if number % 2 == 0:
+#         print(number, end=", ")
 
-# for son in sonlar:
-#     if son % 2 == 0: 
-#         print(son, end=", ")
+print()
+print("Example 2")
 
-print( )
-print("1-misol")
+digits = (12, 45, 67)
 
+for digit in digits:
+    print(digit)
 
-raqamlar = (12, 45, 67)
+print()
+print("Example 3")
 
-for raqam in raqamlar:
-    print(raqam)
+numbers = [8, 22, 5, 17, 30]
 
+max_number = numbers[0]
+min_number = numbers[0]
 
+for number in numbers:
+    if number > max_number:
+        max_number = number
+    if number < min_number:
+        min_number = number
 
-print( )
-print("1-misol")
-
-
-sonlar = [8, 22, 5, 17, 30]
-
-eng_katta = sonlar[0]
-eng_kichik = sonlar[0]
-
-for son in sonlar:
-    if son > eng_katta:
-        eng_katta = son  
-    if son < eng_kichik:
-        eng_kichik = son  
-print("Eng katta:", eng_katta)
-print("Eng kichik:", eng_kichik)
+print("Maximum:", max_number)
+print("Minimum:", min_number)

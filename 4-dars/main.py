@@ -1,33 +1,29 @@
-print( )
-print("1-misol")
-son = float(input("Sonni kiriting: "))
-if son > 0:
-    print("Musbat son.")
-elif son < 0:
-    print("Manfiy son.")
+print()
+print("Example 1")
+number = float(input("Enter a number: "))
+if number > 0:
+    print("The number is positive.")
+elif number < 0:
+    print("The number is negative.")
 else:
-    print("Son nolga teng.")
+    print("The number is zero.")
 
-
-
-print( )
-print("2-misol")
-baho = int(input("Bahoni kiriting: "))
-if baho >= 90:
-    print("A'lo")
-elif 75 <= baho <= 89:
-    print("Yaxshi")
-elif 50 <= baho <= 74:
-    print("Qoniqarli")
+print()
+print("Example 2")
+grade = int(input("Enter the grade: "))
+if grade >= 90:
+    print("Excellent")
+elif 75 <= grade <= 89:
+    print("Good")
+elif 50 <= grade <= 74:
+    print("Satisfactory")
 else:
-    print("Qoniqarsiz")
+    print("Unsatisfactory")
 
-
-
-print( )
-print("3-misol")
-son1 = float(input("Birinci sonni kiriting: "))
-son2 = float(input("Ikkinchi sonni kiriting: "))
-son3 = float(input("Uchinchi sonni kiriting: "))
-eng_katta = max(son1, son2, son3)
-print(f"Eng katta son: {eng_katta}")
+print()
+print("Example 3")
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+num3 = float(input("Enter the third number: "))
+largest = max(num1, num2, num3)
+print(f"The largest number is: {largest}")

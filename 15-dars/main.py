@@ -1,19 +1,19 @@
-# Oldindan belgilangan foydalanuvchi ma'lumotlari (oddiy misol uchun)
-foydalanuvchilar = {
+# Predefined user credentials (for a simple example)
+users = {
     "asad": "12345",
     "ali": "password123",
     "dilshod": "qwerty"
 }
 
-# Foydalanuvchidan login va parol so'rash
-login = input("Loginni kiriting: ")
-parol = input("Parolni kiriting: ")
+# Ask the user to enter username and password
+username = input("Enter your username: ")
+password = input("Enter your password: ")
 
-# Tekshirish
-if login in foydalanuvchilar:
-    if foydalanuvchilar[login] == parol:
-        print("Tizimga muvaffaqiyatli kirdingiz!")
+# Authentication check
+if username in users:
+    if users[username] == password:
+        print("Successfully logged in!")
     else:
-        print("Parol noto‘g‘ri!")
+        print("Incorrect password!")
 else:
-    print("Bunday login mavjud emas!")
+    print("Username not found!")

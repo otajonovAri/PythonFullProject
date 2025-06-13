@@ -1,4 +1,0 @@
-SAD 3
-ASAD 4
-FSDG 5
-DFSG 6

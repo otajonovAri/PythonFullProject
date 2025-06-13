@@ -1,35 +1,33 @@
-print( )
-print("1-misol")
+print()
+print("Example 1")
 
-def qoshish(a, b):
+def add(a, b):
     return a + b
-a = int(input("Birinchi sonni kiriting: "))
-b = int(input("Ikkinchi sonni kiriting: "))
-natija = qoshish(a, b)
-print("Natija:", natija)
 
+a = int(input("Enter the first number: "))
+b = int(input("Enter the second number: "))
+result = add(a, b)
+print("Result:", result)
 
-print( )
-print("2-misol")
-def is_palindrome(matn):
-    return matn == matn[::-1]
+print()
+print("Example 2")
 
-kirish = input("Matn kiriting: ")
+def is_palindrome(text):
+    return text == text[::-1]
 
-natija = is_palindrome(kirish)
-print("Palindrome:", natija)
+input_text = input("Enter a text: ")
+result = is_palindrome(input_text)
+print("Is palindrome:", result)
 
+print()
+print("Example 3")
 
-
-print( )
-print("3-misol")
-
-def faktorial(n):
+def factorial(n):
     if n == 0 or n == 1:
         return 1
     else:
-        return n * faktorial(n - 1)
+        return n * factorial(n - 1)
 
-n = int(input("n sonini kiriting: "))
-natija = faktorial(n)
-print(f"{n}! =", natija)
+n = int(input("Enter a number (n): "))
+result = factorial(n)
+print(f"{n}! =", result)
